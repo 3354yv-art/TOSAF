@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         מתמחים טופ – למי נתתי לייק ודיסלייק
 // @namespace    mitmachim-my-votes
-// @version      1.0
+// @version      1.1
 // @description  מציג את כל הפוסטים שנתת להם לייק או דיסלייק, עם חיפוש וסיכום לפי משתמש
 // @match        https://mitmachim.top/*
 // @run-at       document-end
@@ -189,7 +189,7 @@
 
   /* ---------- כפתור בסרגל הצד ---------- */
   function addNavButton() {
-    const nav = document.getElementById('main-nav');
+    const nav = document.querySelector('[component="sidebar/right"] ul') || document.getElementById('main-nav');
     if (!nav || document.getElementById('mvt-nav')) return;
     const li = document.createElement('li');
     li.id = 'mvt-nav';
